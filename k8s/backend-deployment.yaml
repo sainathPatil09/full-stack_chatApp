@@ -15,13 +15,13 @@ spec:
     spec:
       containers:
       - name: backend
-        image: iemafzal/backend:v1
+        image: wiings09/chatapp-backend
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
         env:
         - name: MONGODB_URI
-          value: "mongodb://root:admin@mongodb:27017/chatApp?authSource=admin"
+          value: "mongodb://mongoadmin:secret@mongodb:27017/chatApp?authSource=admin"
         - name: PORT
           value: "5001"
         - name: NODE_ENV
@@ -29,8 +29,8 @@ spec:
         - name: JWT_SECRET
           valueFrom:
             secretKeyRef:
-              name: backend-secrets
-              key: jwt-secret
+              name: jwt-secret
+              key: jwt
         resources:
           limits:
             memory: "512Mi"
