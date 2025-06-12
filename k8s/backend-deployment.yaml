@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: wiings09/chatapp-backend:v1
+        image: wiings09/chatapp-backend:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
